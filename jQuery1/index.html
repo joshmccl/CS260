@@ -20,14 +20,12 @@
     <script>
     $(document).ready(function() {
         $("#cityField").keyup(function() {
-            alert("Handler for .keyup() called.");
             $.getJSON("staticCity.txt",function(data) {
               var everything;
               everything = "<ul>";
               $.each(data, function(i,item) {
                 everything += "<li> "+data[i].city;
               });
-
               everything += "</ul>";
               $("#txtHint").html(everything);
             });
